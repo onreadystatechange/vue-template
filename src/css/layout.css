@@ -1,0 +1,406 @@
+::-webkit-scrollbar{
+  width: 0px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+  -webkit-border-radius: 6px;
+}
+html,
+body,
+#app {
+  height: 100%;
+  min-height: 667px;
+}
+.container {
+  width: 100%;
+  height: auto;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  background: #AB2A30;
+  font-family: "PingFangSC-Medium";
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 44px;
+  z-index: 9999;
+}
+
+.footbar {
+  width: 100%;
+  height: 48px;
+  background: #fff;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  -webkit-align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+}
+.flex {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.flex-between {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  
+}
+
+/**
+ * popup.
+ */
+.popup-shade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 101;
+  opacity: 0;
+}
+
+/**
+ * transition.
+ */
+.slideToTop-enter, .slideToTop-leave-to {
+  -webkit-animation: slideToTop 300ms ease 1 forwards ;
+          animation: slideToTop 300ms ease 1 forwards ;
+  -webkit-animation-play-state: running;
+}
+.fadeIn {
+  -webkit-animation: fadeIn 300ms ease 1 forwards ;
+          animation: fadeIn 300ms ease 1 forwards ;
+  -webkit-animation-play-state: running;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes slideToTop {
+  from {
+    -webkit-transform: translate3d(0, 1000px, 0);
+    transform: translate3d(0, 1000px, 0)
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) ;
+  }
+}
+@keyframes slideToTop {
+  from {
+    -webkit-transform: translate3d(0, 1000px, 0);
+    transform: translate3d(0, 1000px, 0)
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) ;
+  }
+}
+
+.slideToLeft-enter {
+  -webkit-animation: slideToLeft 300ms ease 1 forwards ;
+          animation: slideToLeft 300ms ease 1 forwards ;
+  -webkit-animation-play-state: running;
+}
+@-webkit-keyframes slideToLeft {
+  from {
+    -webkit-transform: translate3d(-1000px, 0, 0);
+    transform: translate3d(1000px, 0, 0)
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) ;
+  }
+}
+@keyframes slideToLeft {
+  from {
+    -webkit-transform: translate3d(-1000px, 0, 0);
+    transform: translate3d(1000px, 0, 0)
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) ;
+  }
+}
+
+/**
+ * Toast.
+ */
+.toast {
+
+}
+.toast .weui-toast {
+  width: auto;
+  height: auto;
+  min-height: auto;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.weui-toast__content {
+  margin: 0;
+  padding: 10px 20px;
+  word-break: keep-all;
+}
+.fadeToast {
+  -webkit-animation: fadeToast 3500ms ease 1 forwards ;
+          animation: fadeToast 3500ms ease 1 forwards ;
+  -webkit-animation-play-state: running;
+}
+@-webkit-keyframes fadeToast {
+  0% { opacity: 0}
+  50%,80% { opacity: 1}
+  100% { opacity: 0}
+}
+
+@keyframes fadeToast {
+  0% { opacity: 0}
+  50%,80% { opacity: 1}
+  100% { opacity: 0}
+}
+/**
+ * loading.
+ */
+.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background: #FAFAFA;
+}
+.page-loading p,
+.reloading p {
+  position: absolute;
+  padding-left: 25px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.page-loading .weui-loading,
+.reloading .weui-loading {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -10px;
+}
+.reloading {
+  width: 100%;
+  height: 50px;
+  margin: 0px auto;
+  position: relative;
+}
+.loading {
+
+}
+.loading .weui-mask_transparent {
+  z-index: 9998;
+}
+.loading .weui-toast {
+  width: auto;
+  height: auto;
+  min-height: auto;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: 9999;
+}
+/**
+ * dialog.
+ */
+.dialog {
+  width: 86%;
+  max-width: 86%;
+}
+.dialog_bd {
+  margin: 20px auto;
+  padding: 0 1.6em;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #352627;
+}
+.dialog-btn {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #000000;
+}
+.dialog-btn:active {
+  color: #000;
+}
+.dialog-btn_confirm {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #ED4149;
+}
+.dialog-btn_confirm:active {
+  color: #ED4149;
+}
+.dialog .weui-dialog__title {
+  font-family: .PingFang-SC-Medium;
+  font-size: 16px;
+  color: #352627;
+}
+.dialog .weui-dialog__hd {
+  position: relative;
+}
+.dialog__close {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../images/icons/icon_pop_close.png) no-repeat center center;
+  -webkit-background-size: 16px auto;
+  background-size: 16px auto;
+  width: 30px;
+  height: 30px;
+}
+/**
+ * nodata.
+ */
+.nodata {
+  width: 100%;
+  margin: 120px auto;
+  font-family: "PingFangSC-Regular";
+  font-size: 16px;
+  color: #9E9494;
+  text-align: center;
+}
+.nodata p {
+  margin-top: 10px;
+}
+.nodata .icon-nodata {
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto;
+  background: url("../images/icons/icon_empty.png") no-repeat center center;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+}
+.icon-arrow {
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -6px;
+  background: url(../images/icons/icon_arrow@2x@2x.png) no-repeat center center;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+}
+.avtive-class {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-appearance: none;
+}
+.avtive-class:active {
+  background: #ECECEC;
+}
+.submit {
+  display: block;
+  width: 82%;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 100px;
+  font-family: PingFangSC-Light;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/**
+ * form.
+*/
+.form-cell .label {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #151515;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+.value {
+  width: 100%;
+  height: 44px;
+  position: relative;
+}
+.value input,
+.value .disabled {
+  display: block;
+  width: 100%;
+  border: none;
+  height: 44px;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.value input.datepicker {
+  position: relative;
+  background: none;
+  line-height: 44px;
+}
+.value input.datepicker:before{
+  content:'请选择时间';
+  color: #B0ADAD;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 44px; 
+}
+.value input.datepicker.full:before {
+  display: none;
+  content:""!important;
+}
+.value .disabled {
+  line-height: 44px;
+}
+.value .placeholder {
+  color: #B0ADAD;
+}
+.icon-r-arrows {
+  right: 0;
+}
